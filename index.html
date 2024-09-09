@@ -73,6 +73,15 @@
       color: #333;
       text-decoration: none;
     }
+
+    /* Styles for the password input field when checkbox is checked */
+    #password {
+      transition: height 0.3s ease; /* Add smooth transition for height */
+    }
+
+    #showPassword:checked ~ #password {
+
+    }
   </style>
 </head>
 <body>
@@ -101,5 +110,19 @@
       <a href="#">Terms</a>
     </div>
   </div>
+
+  <script>
+    const showPasswordCheckbox = document.getElementById('showPassword');
+    const passwordInput = document.getElementById('password');
+
+    showPasswordCheckbox.addEventListener('change', () => {
+      if (showPasswordCheckbox.checked) {
+        passwordInput.type = 'text';
+      } else {
+        passwordInput.type = 'password';
+      }
+    });
+  </script>
+
 </body>
 </html>
