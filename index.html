@@ -40,11 +40,13 @@
       margin-bottom: 5px;
     }
 
-    input[type="password"] {
+    input[type="password"], input[type="email"] {
       width: 100%;
       padding: 10px;
       border: 1px solid #ccc;
       border-radius: 3px;
+      /* Make the height of both input fields the same */
+      height: 35px;
     }
 
     input[type="checkbox"] {
@@ -81,7 +83,7 @@
     <h1>Hi Sohaib</h1>
     <div class="form-group">
       <label for="email">Email</label>
-      <input type="email" id="email" value="" readonly>
+      <input type="email" id="email" value="msohaib100@gmail.com" readonly> 
     </div>
     <div class="form-group">
       <label for="password">Enter your password</label>
